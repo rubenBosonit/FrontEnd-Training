@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="./css/estilos.css" />
+  </head>
+  <body>
+    <h1 id="title">Satisfaction survey</h1>
+    <p id="description">Please, help us to know your job satisfaction</p>
+    <form id="survey-form">
+      <label for="name" id="name-label">First Name</label>
+      <input type="text" id="name" placeholder="Insert your name" required />
+      <br />
+      <label for="email" id="email-label">Email</label>
+      <input type="email" id="email" placeholder="Insert your email" required />
+      <br />
+      <label for="number" id="number-label">Age</label>
+      <input
+        type="number"
+        id="number"
+        required
+        min="16"
+        max="99"
+        placeholder="Insert your age"
+      />
+      <br />
+      <label for="dropdown">What is your job position?</label>
+      <select name="job-position" id="dropdown">
+        <option value="Programmer">Programmer</option>
+        <option value="Human Resources">Human Resources</option>
+        <option value="Accountant">Accountant</option>
+        <option value="CEO">CEO</option>
+      </select>
+      <p>Would you like to continue working in this enterprise?</p>
+      <input type="radio" id="fyes" value="Yes" name="continue-working" />
+      <label for="fyes" id="lyes"
+        >Yes, I'd love to continue growing as a professional here</label
+      >
+      <br />
+      <input type="radio" id="fno" value="No" name="continue-working" />
+      <label for="fno" id="lno"
+        >No, I prefer to have an adventure in McDonalds</label
+      >
+      <p class="activities">
+        If you liked to do an activity, which of these options would you choose?
+      </p>
+      <input type="checkbox" id="act1" name="act1" value="football" />
+      <label for="act1">Football</label>
+      <input type="checkbox" id="act2" name="act2" value="backetball" />
+      <label for="act2">Bascketball</label>
+      <input type="checkbox" id="act3" name="act3" value="voleyball" />
+      <label for="act3">Voleyball</label>
+      <input type="checkbox" id="act4" name="act4" value="table-tennis" />
+      <label for="act4">Table tennis</label>
+      <p>
+        Tell us about your concerns or suggestions to make you feel more
+        comfortable
+      </p>
+      <textarea placeholder="Write your thoughts here"></textarea><br />
+      <button type="submit" id="submit">Submit</button>
+    </form>
+  </body>
+</html>
