@@ -1,0 +1,177 @@
+$colors: (
+  primary: #d9f3ff,
+  header: #ffef83,
+  anchor: black,
+  a-hover: #013f68,
+  h: #fb3b00,
+  hbg: #005e9c,
+  h-sub: #9b2226,
+  article: #b4e6fd,
+  form: #fff3a8,
+  bottom: #013f68,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  background-color: color(primary);
+
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: color(header);
+    height: 80px;
+    border-bottom: 1px solid black;
+
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media (max-width: 620px) {
+      font-size: 0.7em;
+    }
+    figure {
+      width: 250px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      img {
+        border-radius: 50%;
+        width: 80px;
+        margin-left: 1%;
+        @media (max-width: 620px) {
+          width: 60px;
+        }
+      }
+      p {
+        font-weight: 600;
+      }
+    }
+
+    nav {
+      width: 50%;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        padding-top: 15px;
+        li {
+          align-self: flex-start;
+          margin-left: 20px;
+          padding-right: 15px;
+          border-right: 1px solid black;
+          a {
+            text-decoration: none;
+            color: color(anchor);
+          }
+          list-style: none;
+        }
+        li:hover {
+          font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+            sans-serif;
+          font-weight: 600;
+          a {
+            color: color(a-hover);
+          }
+        }
+        li:last-child {
+          border-right: 0;
+        }
+      }
+    }
+  }
+
+  h1#title {
+    width: 8.6em;
+    margin: 110px auto 30px;
+    color: color(h);
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-weight: 2000;
+    background-color: color(hbg);
+    border-radius: 40px;
+    padding: 20px;
+    border: 1px solid black;
+  }
+
+  section#technology {
+    h2 {
+      width: 300px;
+      margin: 40px auto;
+      text-decoration: underline;
+      color: color(h-sub);
+    }
+    .articles {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .tech {
+        border: 1px solid black;
+        background-color: color(article);
+        border-radius: 50px;
+        min-width: 370px;
+        text-align: center;
+        h3 {
+          width: 300px;
+          margin: 20px auto;
+        }
+        img {
+          height: 300px;
+        }
+        p {
+          text-align: justify;
+          width: 300px;
+          margin: 20px auto;
+        }
+      }
+    }
+  }
+
+  section#opinion {
+    h2 {
+      display: block;
+      width: 300px;
+      margin: 40px auto;
+      text-decoration: underline;
+      color: color(h-sub);
+    }
+    iframe {
+      display: block;
+      width: 550px;
+      margin: 40px auto;
+    }
+  }
+
+  section#contact {
+    background-color: color(bottom);
+    border: 1px solid black;
+    h2 {
+      width: 300px;
+      margin: 20px auto;
+      text-decoration: underline;
+      color: color(h);
+    }
+    form {
+      width: 300px;
+      padding: 10px;
+      margin: 20px auto;
+      border: 1px solid black;
+      background-color: color(form);
+      text-align: center;
+      button {
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
