@@ -1,0 +1,223 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #001d3d;
+  color: white;
+}
+
+body #navbar {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1;
+  background-color: #00152b;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body #navbar header {
+  color: #d62828;
+  font-weight: 700;
+  font-size: 2em;
+  margin: 20px 0 20px 40px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body #navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 40px 20px 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body #navbar ul li {
+  list-style: none;
+  margin-left: 40px;
+  font-size: 1.6em;
+}
+
+body #navbar ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+body section#welcome-section {
+  height: 100vh;
+  margin-top: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body section#welcome-section div:first-child {
+  width: 55%;
+  margin-left: 6%;
+}
+
+body section#welcome-section div:first-child h2 {
+  color: #d62828;
+  font-size: 3em;
+}
+
+body section#welcome-section div:first-child h1 {
+  font-size: 4em;
+}
+
+body section#welcome-section div:first-child p {
+  font-size: 1.6em;
+}
+
+body section#welcome-section div:last-child {
+  margin-right: 2%;
+  position: relative;
+  padding-right: 15%;
+}
+
+body section#welcome-section div:last-child div {
+  background-color: #00152b;
+  width: 300px;
+  height: 250px;
+  border-radius: 50%;
+  margin-top: 6%;
+  margin-left: 31%;
+  position: absolute;
+  z-index: -1;
+}
+
+body section#welcome-section div:last-child img {
+  margin-right: 40px;
+  padding: 0;
+  width: 100%;
+}
+
+body section#projects {
+  margin-top: 100px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body section#projects h2 {
+  color: #d62828;
+  width: 1000px;
+  margin: 40px auto;
+  font-weight: 800;
+  font-size: 40px;
+}
+
+body section#projects div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body section#projects div .bi-github {
+  height: 50px;
+  width: 50px;
+}
+
+body section#projects div .bi-github:hover {
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+body section#projects div h3 {
+  width: 400px;
+  margin: 5px auto 20px;
+  font-size: 30px;
+}
+
+body section#projects div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+body section#projects div img {
+  width: 600px;
+  border-radius: 10px;
+}
+
+body section#projects div img:hover {
+  border: 2px solid #dada00;
+}
+
+body section#projects div img.project-images {
+  width: 800px;
+}
+
+body #contact {
+  --centered: 40px;
+}
+
+body #contact div {
+  text-align: center;
+}
+
+body #contact div svg {
+  width: 60px;
+  height: 60px;
+  margin-left: 40px;
+}
+
+body #contact h2 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 40px;
+}
+
+@media (max-width: 900px) {
+  body #navbar {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  body #navbar header {
+    font-size: 1.6em;
+  }
+  body #navbar ul li {
+    font-size: 1.3em;
+  }
+  body section#welcome-section {
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 70px;
+  }
+  body section#projects h2 {
+    font-size: 28px;
+  }
+  body section#projects div img.project-images {
+    width: 600px;
+  }
+  body section#projects div img {
+    width: 400px;
+  }
+}
+/*# sourceMappingURL=estilos.css.map */
