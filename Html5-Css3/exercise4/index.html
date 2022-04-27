@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" href="css/estilos.css">
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Django REST framework</header>
+      <ul>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#Project_setup">Project setup</a></li>
+        <li><a class="nav-link" href="#Serializers">Serializers</a></li>
+        <li><a class="nav-link" href="#Views">Views</a></li>
+        <li><a class="nav-link" href="#URLs">URLs</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <!--User Story #5: The .main-section elements should contain at least 10 p elements 
+        total (not each).
+
+User Story #6: The .main-section elements should contain at least 5 code elements total
+ (not each).-->
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <img src="https://www.django-rest-framework.org/img/logo.png" />
+        <p>
+          Django REST framework is a powerful and flexible toolkit for building
+          Web APIs.<br />
+          Some reasons you might want to use REST framework:
+        </p>
+        <ul>
+          <li>
+            The Web browsable API is a huge usability win for your developers.
+          </li>
+          <li>
+            Authentication policies including packages for OAuth1a and OAuth2.
+          </li>
+          <li>
+            Serialization that supports both ORM and non-ORM data sources.
+          </li>
+          <li>
+            Customizable all the way down - just use regular function-based
+            views if you don't need the more powerful features.
+          </li>
+          <li>Extensive documentation, and great community support.</li>
+          <li>
+            Used and trusted by internationally recognised companies including
+            Mozilla, Red Hat, Heroku, and Eventbrite.
+          </li>
+        </ul>
+      </section>
+      <section class="main-section" id="Project_setup">
+        <header>Project setup</header>
+        <p>
+          Create a new Django project named <code>tutorial</code>, then start a
+          new app called <code>quickstart</code>
+        </p>
+        <div class="code-card">
+          <code>
+            <p class="comments"># Create the project directory</p>
+            <p class="code">mkdir tutorial<br />cd tutorial</p>
+            <p class="comments">
+              # Create a virtual environment to isolate our package dependencies
+              locally
+            </p>
+            <span class="code"
+              >python3 -m venv env<br />source env/bin/activate
+            </span>
+            <span class="comments"
+              ># On Windows use `env\Scripts\activate`</span
+            >
+            <p class="comments">
+              # Install Django and Django REST framework into the virtual
+              environment
+            </p>
+            <p class="code">
+              pip install django<br />pip install djangorestframework
+            </p>
+            <p class="comments">
+              # Set up a new project with a single application
+            </p>
+            <span class="code"> django-admin startproject tutorial . </span>
+            <span class="comments"> # Note the trailing '.' character </span>
+            <p class="code">
+              cd tutorial<br />django-admin startapp quickstart<br />cd ..
+            </p>
+          </code>
+        </div>
+        <p>Now, sync your database for the first time</p>
+        <div class="code-card">
+          <code> python manage.py migrate </code>
+        </div>
+        <p>
+          We'll also create an initial user named admin with a password of
+          password123. 
+        </p>
+        <div class="code-card">
+          <code>
+            python manage.py createsuperuser --email admin@example.com
+            --username admin
+          </code>
+        </div>
+      </section>
+      <section class="main-section" id="Serializers">
+        <header>Serializers</header>
+        <p>
+          First up we're going to define some serializers. Let's create a new
+          module named tutorial/quickstart/serializers.py that we'll use for our
+          data representations.
+        </p>
+        <div class="code-card">
+          <code>
+              <p class="code">
+                from django.contrib.auth.models import User, Group<br />
+                from rest_framework import serializers<br /><br /><br />
+                class UserSerializer(serializers.HyperlinkedModelSerializer):<br />&nbsp;&nbsp;&nbsp;
+                class Meta:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; model =
+                User<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fields = ['url',
+                'username', 'email', 'groups']<br /><br /><br />
+                class GroupSerializer(serializers.HyperlinkedModelSerializer):<br />&nbsp;&nbsp;&nbsp;
+                class Meta:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; model =
+                Group<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fields = ['url',
+                'name']
+              </p>
+            </code>
+        </div>
+      </section>
+      <section class="main-section" id="Views">
+        <header>Views</header>
+        <p>
+          Right, we'd better write some views then. Open
+          tutorial/quickstart/views.py and get typing.
+        </p>
+        <div class="code-card">
+          <code>
+              <span class="code">
+                from django.contrib.auth.models import User, Group<br />
+                from rest_framework import viewsets<br />
+                from rest_framework import permissions<br />
+                from tutorial.quickstart.serializers import UserSerializer,
+                GroupSerializer<br /><br /><br />
+                class UserViewSet(viewsets.ModelViewSet):<br />&nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="red-comments">
+                """ API endpoint that allows users to be viewed or edited. """
+              </span><br/>
+              <span class="code">
+                &nbsp;&nbsp;&nbsp;
+                queryset = User.objects.all().order_by('-date_joined')<br>&nbsp;&nbsp;&nbsp;
+                serializer_class = UserSerializer permission_classes =<br>&nbsp;&nbsp;&nbsp;
+                [permissions.IsAuthenticated]<br><br><br>
+                class GroupViewSet(viewsets.ModelViewSet): <br>&nbsp;&nbsp;&nbsp;
+              </span>
+            <span class="red-comments">""" API endpoint that allows groups to be viewed or edited. """<br>&nbsp;&nbsp;&nbsp;</span>
+            <span class="code">
+                queryset = Group.objects.all()<br>&nbsp;&nbsp;&nbsp;
+                serializer_class = GroupSerializer permission_classes = <br>&nbsp;&nbsp;&nbsp;
+                [permissions.IsAuthenticated]
+            </span>
+          </code>
+        </div>
+        <p>
+            Rather than write multiple views we're grouping together all the common behavior into classes called <code>ViewSets</code>.  
+        </p>
+      </section>
+      <section class="main-section" id="URLs">
+        <header>URLs</header>
+        <p>Okay, now let's wire up the API URLs. On to tutorial/urls.py...</p>
+        <div class="code-card">
+            <code>
+                <p class="code">
+                    from django.urls import include, path<br />
+                    from rest_framework import routers<br />
+                    from tutorial.quickstart import views<br /><br />
+
+                    router = routers.DefaultRouter() <br>
+                    router.register(r'users', views.UserViewSet) <br>
+                    router.register(r'groups', views.GroupViewSet) <br>               
+                </p>
+
+                <p class="comments">
+                    # Wire up our API using automatic URL routing.<br>
+                    # Additionally, we include login URLs for the browsable API.
+                </p>
+                <p class="code">
+                    urlpatterns = [
+                    <br/>&nbsp;&nbsp;&nbsp;path('', include(router.urls)),<br/>&nbsp;&nbsp;&nbsp;path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))<br/>
+                    ]             
+                </p>
+          </div>
+      </section>
+    </main>
+  </body>
+</html>
