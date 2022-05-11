@@ -1,0 +1,55 @@
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+
+  h1#title {
+    margin: 30px auto 10px;
+    text-align: center;
+    font-size: 40px;
+    color: rgb(211, 214, 1);
+  }
+
+  h1#number {
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    margin: 20px auto;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: rgb(197, 24, 1);
+  }
+
+  div.counter {
+    width: 180px;
+    margin: 10px auto;
+
+    h2:first-child {
+      text-align: center;
+      color: rgb(255, 187, 0);
+      font-size: 35px;
+      text-decoration: underline;
+    }
+
+    h2 {
+      color: rgb(179, 182, 0);
+    }
+
+    button {
+      background-color: rgb(238, 208, 73);
+      padding: 10px;
+    }
+
+    input {
+      height: 20px;
+      width: 160px;
+    }
+    p {
+      color: yellow;
+    }
+  }
+}

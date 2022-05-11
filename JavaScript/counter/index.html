@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+  </head>
+  <body>
+    <h1 id="title">Welcome to the counter website! </h1>
+    <h1 id="number">0</h1>
+    <div class="counter">
+      <h2>Setup</h2>
+      <h2>Interval (s)</h2>
+      <input id="number-interval" type="number" min="1" max="100000" value="1"></input></body><br/><br/>
+      <button id="start-button" onClick="handleStart">start</button>
+      <button id="pause-button" onClick="handlePause">pause</button>
+      <button id="reset-button" onClick="handleReset">reset</button>
+      <h2>Count</h2>
+      <button id="count-up-button" onClick="handleIncrease">count up</button>
+      <button id="count-down-button" onClick="handleDecrease">count down</button>
+      <h2>Set to</h2>
+      <input id="number-input" type="number" value="0"></input>
+      <h2>Step</h2>
+      <input id="step-input" type="number" value="1"></input>
+      <p id="info"></p>
+    </div>
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>
