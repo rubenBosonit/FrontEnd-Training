@@ -26,7 +26,7 @@ document.getElementById("title").innerHTML = "Spanish Universities";
 document.getElementById("spain-button").style.backgroundColor = "red";
 
 //We create an event to control the input changes
-document.getElementById("search-input").onchange = handleInput;
+document.getElementById("search-input").onkeyup = handleInput;
 
 //When we pulse on any button, we assign a list of the universities of
 //the selected country to the universities variable
