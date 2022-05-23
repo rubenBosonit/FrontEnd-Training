@@ -1,0 +1,19 @@
+<h2>PARENT</h2>
+<p>message: {{ childMessage }}</p>
+<!-- 
+    CHILD USING SERVICE
+    CHILD USING OUTPUT EVENT
+    CHILD USING SUBJECT
+  -->
+<div class="buttons">
+  <button>Use Service</button>
+  <button (click)="inputEventClicked()">Use Input Property</button>
+  <button>Use Observable</button>
+</div>
+
+<div class="child">
+  <child-component
+    (onChildMessage)="outputEventClicked($event)"
+    [parentMessage]="parentMessage"
+  ></child-component>
+</div>
