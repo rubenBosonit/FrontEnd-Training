@@ -6,9 +6,9 @@
     CHILD USING SUBJECT
   -->
 <div class="buttons">
-  <button>Use Service</button>
+  <button (click)="serviceChange()">Use Service</button>
   <button (click)="inputEventClicked()">Use Input Property</button>
-  <button>Use Observable</button>
+  <button (click)="parentUsingSubject()">Use Observable</button>
 </div>
 
 <div class="child">
