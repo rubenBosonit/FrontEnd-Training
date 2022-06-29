@@ -1,44 +1,26 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import ChildComponent from '../child/child.component';
+import ParentComponent from '../parent/parent.component';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CommunicationService {
-  childMessage: string = '';
-  parentMessage: string = '';
+  public parentClass!: ParentComponent;
+  public childClass!: ChildComponent;
+  // private _childText = '';
+  // public get childText() {
+  //   return this._childText;
+  // }
+  // public set childText(value) {
+  //   this._childText = value;
+  // }
 
-  constructor() {
-    this.subjectsStartListening();
-  }
-
-  fatherNewValue: Subject<string> = new Subject();
-  childNewValue: Subject<string> = new Subject();
-
-  subjectsStartListening() {
-    this.fatherNewValue.subscribe((childMessage) => {
-      this.parentMessage = childMessage;
-    });
-    this.childNewValue.subscribe((parentMessage) => {
-      this.childMessage = parentMessage;
-      console.log(this.childMessage);
-    });
-  }
-
-  childUsedService() {
-    this.parentMessage = 'CHILD USING SERVICE';
-  }
-  parentUsedService() {
-    this.childMessage = 'PARENT USING SERVICE';
-  }
-
-  childUsedObservable() {
-    this.fatherNewValue.next('CHILD USING SUBJECT');
-  }
-
-  parentUsedObservable() {
-    console.log('a');
-
-    this.childNewValue.next('PARENT USING SUBJECT');
-  }
+  // private _parentText = '';
+  // public get parentText() {
+  //   return this._parentText;
+  // }
+  // public set parentText(value) {
+  //   this._parentText = value;
+  // }
 }

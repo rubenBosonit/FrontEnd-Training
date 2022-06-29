@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { CommunicationService } from '../services/communication.service';
+import { childMessenger, parentMessenger } from './comun';
 
 @Component({
   selector: 'parent-component',
@@ -9,7 +10,12 @@ export default class ParentComponent {
   parentMessage: string = '';
   childMessage: string = '';
 
-  constructor(private communicationSercice: CommunicationService) {}
+  constructor(public communicationService: CommunicationService) {
+    this.communicationService.parentClass = this;
+    childMessenger.subscribe((message) => {
+      this.childMessage = message + '';
+    });
+  }
 
   inputEventClicked() {
     this.parentMessage = 'PARENT USING INPUT PROPERTY';
@@ -20,12 +26,11 @@ export default class ParentComponent {
   }
 
   serviceChange() {
-    this.communicationSercice.parentUsedService();
-    this.parentMessage = this.communicationSercice.childMessage;
+    this.communicationService.childClass.parentMessage = 'PARENT USING SERVICE';
+    // this.communicationService.childText = 'PARENT USING SERVICE';
   }
 
   parentUsingSubject() {
-    this.communicationSercice.parentUsedObservable();
-    this.parentMessage = this.communicationSercice.childMessage;
+    parentMessenger.next('PARENT USING SUBJECT');
   }
 }
