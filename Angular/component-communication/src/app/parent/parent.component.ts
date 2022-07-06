@@ -1,16 +1,25 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+} from '@angular/core';
 import { CommunicationService } from '../services/communication.service';
 import { childMessenger, parentMessenger } from './comun';
 
 @Component({
   selector: 'parent-component',
   templateUrl: './parent.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrls: ['./parent.component.scss'],
 })
 export default class ParentComponent {
-  parentMessage: string = '';
+  parentMessage: String = new String('');
   childMessage: string = '';
 
-  constructor(public communicationService: CommunicationService) {
+  constructor(
+    public communicationService: CommunicationService,
+    private cdRef: ChangeDetectorRef
+  ) {
     this.communicationService.parentClass = this;
     childMessenger.subscribe((message) => {
       this.childMessage = message + '';
@@ -18,7 +27,7 @@ export default class ParentComponent {
   }
 
   inputEventClicked() {
-    this.parentMessage = 'PARENT USING INPUT PROPERTY';
+    this.parentMessage = new String('PARENT USING INPUT PROPERTY');
   }
 
   outputEventClicked(name: string) {

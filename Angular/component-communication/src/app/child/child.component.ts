@@ -1,13 +1,21 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ViewEncapsulation,
+} from '@angular/core';
 import { CommunicationService } from '../services/communication.service';
 import { childMessenger, parentMessenger } from '../parent/comun';
 
 @Component({
   selector: 'child-component',
   templateUrl: './child.component.html',
+  // encapsulation: ViewEncapsulation.ShadowDom,
+  styleUrls: ['./child.component.scss'],
 })
 export default class ChildComponent {
-  @Input() parentMessage: string = '';
+  @Input() parentMessage: String = new String('');
   @Output() onChildMessage: EventEmitter<string> = new EventEmitter();
 
   constructor(public communicationService: CommunicationService) {
