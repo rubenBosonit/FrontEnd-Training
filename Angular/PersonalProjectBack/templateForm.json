@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Pepe",
+      "username": "pepito99",
+      "password": "24evgwcw24",
+      "email": "pepelorosa@hotmail.com",
+      "notifications": true,
+      "city": "Madrid",
+      "country": "Spain"
+    },
+    {
+      "id": 2,
+      "name": "Luis",
+      "username": "luisitocomunica",
+      "password": "9u4n248d",
+      "email": "luisitocomunica@gmail.com",
+      "notifications": false,
+      "city": "Buenos aires",
+      "country": "Argentina"
+    },
+    {
+      "id": 3,
+      "name": "Alba ",
+      "username": "albita11",
+      "password": "1224423gve",
+      "email": "albeae@gmail.com",
+      "notifications": false,
+      "country": "Bahamas",
+      "city": "Villacarrillo"
+    }
+  ]
+}

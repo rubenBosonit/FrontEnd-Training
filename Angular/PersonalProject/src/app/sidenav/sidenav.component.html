@@ -1,0 +1,57 @@
+<mat-sidenav #sidenav mode="push">
+  <mat-toolbar style="background-color: #60495a">
+    <span>Menu</span>
+    <span class="spacer"> </span>
+
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-nav-list>
+    <a routerLink="" mat-list-item (click)="sidenav.toggle()">
+      <mat-icon mat-list-icon>home</mat-icon>
+      <span>Home</span>
+    </a>
+    <a routerLink="./display-hide" mat-list-item (click)="sidenav.toggle()">
+      <mat-icon mat-list-icon>remove_red_eye</mat-icon>
+      <span>Display-hide</span>
+    </a>
+    <a routerLink="" mat-list-item (click)="sidenav.toggle()">
+      <mat-icon mat-list-icon>message</mat-icon>
+      <span>Component communication</span>
+    </a>
+    <a
+      routerLink="./crud-template-form"
+      mat-list-item
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon mat-list-icon>library_books</mat-icon>
+      <span>CRUD template form</span>
+    </a>
+    <a
+      routerLink="./crud-reactive-form"
+      mat-list-item
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon mat-list-icon>library_books</mat-icon>
+      <span>CRUD reactive form</span>
+    </a>
+    <a routerLink="./external-library" mat-list-item (click)="sidenav.toggle()">
+      <mat-icon mat-list-icon>insert_chart</mat-icon>
+      <span>External library</span>
+    </a>
+    <a routerLink="./light-switch" mat-list-item (click)="sidenav.toggle()">
+      <mat-icon mat-list-icon>shuffle</mat-icon>
+      <span>Light switch</span>
+    </a>
+  </mat-nav-list>
+</mat-sidenav>
+<mat-toolbar style="background-color: #212d40">
+  <button
+    mat-icon-button
+    (click)="sidenav.toggle()"
+    style="background-color: #ffd93d"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>

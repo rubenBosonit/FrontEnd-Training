@@ -1,0 +1,88 @@
+<h2>Register form</h2>
+<form (ngSubmit)="createUser()" #myForm="ngForm" autocomplete="off">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your name</mat-label>
+    <input matInput ngModel name="name" minlength="1" required />
+    <mat-error *ngIf="invalidField('name')"
+      >Name field cannot be empty
+    </mat-error>
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your username</mat-label>
+    <input matInput ngModel name="username" minlength="1" required />
+    <mat-error *ngIf="invalidField('username')"
+      >Username field cannot be empty
+    </mat-error>
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your password</mat-label>
+    <input
+      matInput
+      ngModel
+      name="password1"
+      minlength="6"
+      required
+      (onchange)="invalidPassword()"
+    />
+    <mat-error *ngIf="invalidField('password1')"
+      >Password field must have 6 characters
+    </mat-error>
+  </mat-form-field>
+  <br />
+  <mat-form-field id="password2" appearance="fill">
+    <mat-label>Confirm your password</mat-label>
+    <input matInput ngModel name="password2" required />
+    <mat-error *ngIf="invalidField('password2')"
+      >Confirmation password required
+    </mat-error>
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your Email</mat-label>
+    <input matInput ngModel name="email" required />
+    <mat-error *ngIf="invalidField('email')">Email is required </mat-error>
+  </mat-form-field>
+  <br />
+
+  <mat-checkbox ngModel name="notifications"
+    >Send me promotional offers</mat-checkbox
+  >
+
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a country</mat-label>
+    <mat-select ngModel name="country" required>
+      <mat-option
+        value="{{ country.name }}"
+        *ngFor="let country of countryList"
+        >{{ country.name }}</mat-option
+      >
+    </mat-select>
+    <mat-error *ngIf="invalidCountry()">You must select a country </mat-error>
+  </mat-form-field>
+  <br />
+
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your city</mat-label>
+    <input matInput ngModel name="city" required />
+    <mat-error *ngIf="invalidField('city')">City is required </mat-error>
+  </mat-form-field>
+  <br />
+  <button
+    *ngIf="saveButtonVisible"
+    mat-raised-button
+    color="primary"
+    type="submit"
+  >
+    Create
+  </button>
+  <button
+    *ngIf="editButtonVisible"
+    mat-raised-button
+    color="primary"
+    type="submit"
+  >
+    Save
+  </button>
+</form>
