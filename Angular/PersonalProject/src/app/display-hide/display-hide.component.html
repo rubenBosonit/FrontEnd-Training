@@ -1,0 +1,11 @@
+<div class="container">
+  <p>Click me!</p>
+  <button *ngIf="!appear" mat-icon-button (click)="show()">
+    <mat-icon mat-list-icon>visibility</mat-icon>
+  </button>
+  <button *ngIf="appear" mat-icon-button (click)="show()">
+    <mat-icon mat-list-icon>visibility_off</mat-icon>
+  </button>
+  <br />
+  <div class="newDiv" *ngIf="appear">Hello World!</div>
+</div>

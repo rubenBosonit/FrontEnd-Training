@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { CrudTemplateModule } from './crud-template-form/crud-template.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { DisplayHideModule } from './display-hide/display-hide.module';
+import { ComponentCommunicationModule } from './component-communication/component-communication.module';
 
 @NgModule({
   declarations: [AppComponent, ChooseExercise, SidenavComponent],
@@ -17,7 +19,9 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     BrowserAnimationsModule,
     AppRouterModule,
     MaterialModule,
+    ComponentCommunicationModule,
     CrudTemplateModule,
+    DisplayHideModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

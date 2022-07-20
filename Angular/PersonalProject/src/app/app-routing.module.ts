@@ -6,6 +6,7 @@ import { DisplayHide } from './display-hide/display-hide.component';
 import { ChooseExercise } from './choose-exercise/choose-exercise.component';
 import { ExternalLibrary } from './external-library/external-library.component';
 import { LightSwitch } from './light-switch/light-switch.component';
+import { ComponentCommunication } from './component-communication/component-communication.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'display-hide',
     component: DisplayHide,
+  },
+  {
+    path: 'component-communication',
+    component: ComponentCommunication,
   },
   {
     path: 'crud-template-form',
@@ -31,6 +36,10 @@ const routes: Routes = [
   {
     path: 'light-switch',
     component: LightSwitch,
+  },
+  {
+    path: '**',
+    redirectTo: '',
   },
 ];
 

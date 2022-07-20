@@ -1,0 +1,94 @@
+$color-primary: #f6aca2;
+$color-secondary: #f49b90;
+$color-tertiary: #f28b7d;
+$color-quaternary: #f07a6a;
+$color-quinary: #ee6352;
+
+.container {
+  text-align: center;
+  margin-top: 40px;
+}
+button {
+  background-color: purple;
+  text-align: center;
+  cursor: pointer;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.newDiv {
+  text-shadow: 3px 3px 0 $color-secondary, 6px 6px 0 $color-tertiary,
+    9px 9px $color-quaternary, 12px 12px 0 $color-quinary;
+  color: $color-primary;
+  margin-top: 50px;
+  font-weight: 800;
+  font-size: 50px;
+  animation: shadows 1.2s ease-in infinite, move 1.2s ease-in infinite;
+  letter-spacing: 0.4rem;
+}
+
+p {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+@keyframes shadows {
+  0% {
+    text-shadow: none;
+  }
+  10% {
+    text-shadow: 3px 3px 0 $color-secondary;
+  }
+  20% {
+    text-shadow: 3px 3px 0 $color-secondary, 6px 6px 0 $color-tertiary;
+  }
+  30% {
+    text-shadow: 3px 3px 0 $color-secondary, 6px 6px 0 $color-tertiary,
+      9px 9px $color-quaternary;
+  }
+  40% {
+    text-shadow: 3px 3px 0 $color-secondary, 6px 6px 0 $color-tertiary,
+      9px 9px $color-quaternary, 12px 12px 0 $color-quinary;
+  }
+  50% {
+    text-shadow: 3px 3px 0 $color-secondary, 6px 6px 0 $color-tertiary,
+      9px 9px $color-quaternary, 12px 12px 0 $color-quinary;
+  }
+  60% {
+    text-shadow: 3px 3px 0 $color-secondary, 6px 6px 0 $color-tertiary,
+      9px 9px $color-quaternary, 12px 12px 0 $color-quinary;
+  }
+  70% {
+    text-shadow: 3px 3px 0 $color-secondary, 6px 6px 0 $color-tertiary,
+      9px 9px $color-quaternary;
+  }
+  80% {
+    text-shadow: 3px 3px 0 $color-secondary, 6px 6px 0 $color-tertiary;
+  }
+  90% {
+    text-shadow: 3px 3px 0 $color-secondary;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  40% {
+    transform: translate(-12px, -12px);
+  }
+  50% {
+    transform: translate(-12px, -12px);
+  }
+  60% {
+    transform: translate(-12px, -12px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}

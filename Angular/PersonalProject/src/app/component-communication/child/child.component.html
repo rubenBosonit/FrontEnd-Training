@@ -1,0 +1,18 @@
+<h2>CHILD</h2>
+<p>message: {{ parentMessage }}</p>
+<!-- 
+      PARENT USING SERVICE
+      PARENT USING INPUT PROPERTY
+      PARENT USING SUBJECT
+    -->
+<div class="buttons">
+  <button mat-raised-button color="primary" (click)="serviceChange()">
+    Use Service
+  </button>
+  <button mat-raised-button color="accent" (click)="eventClicked()">
+    Use Input Property
+  </button>
+  <button mat-raised-button color="warn" (click)="childUsingSubject()">
+    Use Observable
+  </button>
+</div>
