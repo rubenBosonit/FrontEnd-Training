@@ -1,0 +1,70 @@
+.container {
+  position: relative;
+  top: 300px;
+  right: 400px;
+  background-color: rgb(253, 188, 91);
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  color: black;
+  border-radius: 20px;
+
+  h1 {
+    text-decoration: underline;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    mat-form-field {
+      width: 150px;
+      // mat-option {
+      //   width: auto;
+      //   background-color: rgb(253, 203, 128);
+      //   font-size: 14px;
+      // }
+    }
+    mat-checkbox {
+      margin-left: 30px;
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    right: 150px;
+    width: 310px;
+    form {
+      mat-checkbox {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .container {
+    right: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    right: 100px;
+    top: 150px;
+  }
+}
+
+@media (max-width: 696px) {
+  .container {
+    right: 0px;
+    top: 300px;
+    width: 200px;
+    form {
+      flex-direction: column;
+      mat-checkbox {
+        align-self: flex-start;
+      }
+    }
+  }
+}

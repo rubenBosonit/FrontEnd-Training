@@ -1,0 +1,26 @@
+<div class="container">
+  <img class="street-image" src="assets/traffic-light.jpeg" alt="" />
+  <div class="traffic-light">
+    <div
+      class="circle darkred"
+      [ngClass]="{
+        darkred: selectedValue != 'Red' || state == false,
+        red: selectedValue == 'Red' && state == true
+      }"
+    ></div>
+    <div
+      class="circle"
+      [ngClass]="{
+        darkyellow: selectedValue != 'Yellow' || state == false,
+        yellow: selectedValue == 'Yellow' && state == true
+      }"
+    ></div>
+    <div
+      class="circle darkgreen"
+      [ngClass]="{
+        darkgreen: selectedValue != 'Green' || state == false,
+        green: selectedValue == 'Green' && state == true
+      }"
+    ></div>
+  </div>
+</div>

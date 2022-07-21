@@ -1,0 +1,154 @@
+.container {
+  position: relative;
+  background-color: blue;
+
+  .traffic-light {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #252423;
+    height: 550px;
+    width: 210px;
+    position: absolute;
+    border-radius: 20px;
+    left: 710px;
+    top: 60px;
+
+    .circle {
+      height: 140px;
+      width: 140px;
+      margin-bottom: 30px;
+      border-radius: 50%;
+    }
+    .red {
+      background-color: red;
+      -webkit-box-shadow: 0px 0px 25px 9px rgba(255, 0, 0, 0.78);
+      box-shadow: 0px 0px 25px 9px rgba(255, 0, 0, 0.78);
+      transition: 0.4s;
+    }
+    .darkred {
+      background-color: rgb(105, 55, 55);
+    }
+
+    .yellow {
+      background-color: yellow;
+      -webkit-box-shadow: 0px 0px 25px 9px rgba(255, 248, 0, 0.78);
+      box-shadow: 0px 0px 25px 9px rgba(255, 248, 0, 0.78);
+      transition: 0.4s;
+    }
+    .darkyellow {
+      background-color: rgb(107, 107, 60);
+    }
+
+    .green {
+      background-color: green;
+      -webkit-box-shadow: 0px 0px 25px 9px rgba(32, 201, 0, 0.78);
+      box-shadow: 0px 0px 25px 9px rgba(32, 201, 0, 0.78);
+      margin-bottom: 0;
+      transition: 0.4s;
+    }
+    .darkgreen {
+      background-color: rgb(53, 85, 53);
+      margin-bottom: 0;
+    }
+  }
+
+  .street-image {
+    position: absolute;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    .street-image {
+      width: 1000px;
+    }
+    .traffic-light {
+      height: 460px;
+      width: 170px;
+      left: 590px;
+      top: 55px;
+      .circle {
+        height: 120px;
+        width: 120px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .container {
+    .street-image {
+      width: 900px;
+    }
+    .traffic-light {
+      height: 420px;
+      width: 150px;
+      left: 540px;
+      top: 48px;
+      .circle {
+        height: 110px;
+        width: 110px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    .street-image {
+      width: 700px;
+    }
+    .traffic-light {
+      height: 320px;
+      width: 120px;
+      left: 420px;
+      top: 35px;
+      .circle {
+        height: 90px;
+        width: 90px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 696px) {
+  .container {
+    .street-image {
+      width: 400px;
+    }
+    .traffic-light {
+      height: 185px;
+      width: 70px;
+      left: 245px;
+      top: 20px;
+      .circle {
+        height: 55px;
+        width: 55px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+    .street-image {
+      width: 300px;
+    }
+    .traffic-light {
+      height: 140px;
+      width: 65px;
+      left: 180px;
+      top: 16px;
+      .circle {
+        height: 45px;
+        width: 45px;
+        margin-top: 5px;
+      }
+    }
+  }
+}

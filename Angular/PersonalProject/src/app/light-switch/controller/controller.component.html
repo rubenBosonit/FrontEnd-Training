@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Controller</h1>
+  <form>
+    <mat-form-field appearance="fill">
+      <mat-select [(value)]="selectedValue" (valueChange)="colorChanged()">
+        <mat-option
+          style="
+            width: auto;
+            background-color: rgb(253, 203, 128);
+            font-size: 14px;
+          "
+          *ngFor="let color of colors"
+          [value]="color"
+          >{{ color }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <mat-checkbox [checked]="checked" (change)="switchMode()"
+      >Turn on/off</mat-checkbox
+    >
+  </form>
+</div>

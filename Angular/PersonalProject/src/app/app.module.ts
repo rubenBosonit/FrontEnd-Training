@@ -11,6 +11,7 @@ import { CrudTemplateModule } from './crud-template-form/crud-template.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { DisplayHideModule } from './display-hide/display-hide.module';
 import { ComponentCommunicationModule } from './component-communication/component-communication.module';
+import { LightSwitchModule } from './light-switch/light-switch.module';
 
 @NgModule({
   declarations: [AppComponent, ChooseExercise, SidenavComponent],
@@ -22,6 +23,7 @@ import { ComponentCommunicationModule } from './component-communication/componen
     ComponentCommunicationModule,
     CrudTemplateModule,
     DisplayHideModule,
+    LightSwitchModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

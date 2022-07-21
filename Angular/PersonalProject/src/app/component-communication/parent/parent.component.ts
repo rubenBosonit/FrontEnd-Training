@@ -4,7 +4,7 @@ import {
   Component,
 } from '@angular/core';
 import { CommunicationService } from '../services/communication.service';
-import { childMessenger, parentMessenger } from './comun';
+import { childMessenger, parentMessenger } from './common';
 
 @Component({
   selector: 'parent-component',

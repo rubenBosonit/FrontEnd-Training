@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { CommunicationService } from '../services/communication.service';
-import { childMessenger, parentMessenger } from '../parent/comun';
+import { childMessenger, parentMessenger } from '../parent/common';
 
 @Component({
   selector: 'child-component',
