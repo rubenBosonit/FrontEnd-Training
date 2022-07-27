@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Rubén",
+      "lastname": "Plazas Sánchez",
+      "username": "rubenp1999",
+      "password": "abcdef1",
+      "email": "ruplasan@gmail.com",
+      "promotion": true,
+      "country": "South Africa",
+      "city": "Uraek"
+    },
+    {
+      "id": 2,
+      "name": "Rocío",
+      "lastname": "García Mora",
+      "username": "roci23",
+      "password": "1234as",
+      "email": "roci@gmail.com",
+      "promotion": false,
+      "country": "Burkina Faso",
+      "city": "Bilvao"
+    },
+    {
+      "id": 3,
+      "name": "Carlos",
+      "lastname": "Erudish",
+      "username": "charles12",
+      "password": "123456as",
+      "email": "charles32@hotmail.es",
+      "promotion": false,
+      "country": "United States of America",
+      "city": "Los Angeles"
+    },
+    {
+      "id": 6,
+      "name": "Carlitos",
+      "lastname": "Rivera López",
+      "username": "carlitos12",
+      "password": "123456ab",
+      "email": "carlos@gmail.com",
+      "promotion": true,
+      "country": "Antarctica",
+      "city": "Astef"
+    }
+  ]
+}

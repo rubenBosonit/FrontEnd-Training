@@ -1,0 +1,117 @@
+<form (ngSubmit)="saveUser()" [formGroup]="myForm" autocomplete="off">
+  <label>Name</label>
+  <input
+    type="text"
+    pInputText
+    formControlName="name"
+    placeholder="Enter you name"
+  />
+
+  <small *ngIf="isFieldInvalid('name')">{{ isFieldInvalid("name") }}</small>
+
+  <label>Lastname</label>
+  <input
+    type="text"
+    pInputText
+    formControlName="lastname"
+    placeholder="Enter your lastname"
+  />
+
+  <small *ngIf="isFieldInvalid('lastname')">{{
+    isFieldInvalid("lastname")
+  }}</small>
+
+  <label>Username</label>
+  <input
+    type="text"
+    pInputText
+    formControlName="username"
+    placeholder="Enter your username"
+  />
+
+  <small *ngIf="isFieldInvalid('username')">{{
+    isFieldInvalid("username")
+  }}</small>
+
+  <label>Password</label>
+  <input
+    type="password"
+    pInputText
+    formControlName="password"
+    placeholder="Enter your password"
+    autocomplete="on"
+  />
+
+  <small *ngIf="isFieldInvalid('password')">{{
+    isFieldInvalid("password")
+  }}</small>
+
+  <label>Confirm password</label>
+  <input
+    type="password"
+    pInputText
+    formControlName="password2"
+    placeholder="Confirm your password"
+    autocomplete="on"
+  />
+  <small *ngIf="isFieldInvalid('password2')">{{
+    isFieldInvalid("password2")
+  }}</small>
+
+  <label>Email</label>
+  <input
+    type="email"
+    pInputText
+    formControlName="email"
+    placeholder="Enter your email"
+  />
+
+  <small *ngIf="isFieldInvalid('email')">{{ isFieldInvalid("email") }}</small>
+
+  <p-checkbox
+    inputId="sub"
+    formControlName="promotion"
+    value="promotion"
+  ></p-checkbox>
+  &nbsp; <label for="sub">Send me promotional offers</label>
+
+  <label>Country</label>
+  <p-dropdown
+    placeholder="Select a country from the list"
+    [options]="countries"
+    placeholder="Select a country"
+    optionLabel="name"
+    formControlName="country"
+  ></p-dropdown>
+
+  <small *ngIf="isFieldInvalid('country')">{{
+    isFieldInvalid("country")
+  }}</small>
+
+  <label>City</label>
+  <input
+    type="text"
+    pInputText
+    formControlName="city"
+    placeholder="Enter your city"
+  />
+
+  <small *ngIf="isFieldInvalid('city')">{{ isFieldInvalid("city") }}</small>
+
+  <button
+    *ngIf="!editEnabled"
+    pButton
+    type="submit"
+    label="Register"
+    class="p-button-success"
+    [disabled]="myForm.pending"
+  ></button>
+  <button
+    *ngIf="editEnabled"
+    pButton
+    type="submit"
+    label="Edit"
+    class="p-button-warning"
+    [disabled]="myForm.pending"
+  ></button>
+</form>

@@ -109,5 +109,7 @@
       }
     }
   },
-  "defaultProject": "PersonalProject"
+  "cli": {
+    "analytics": "fdb0ecf7-4ac5-4194-b009-a29a5ee1233a"
+  }
 }

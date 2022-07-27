@@ -1,0 +1,20 @@
+form {
+  label {
+    display: block;
+    margin-top: 15px;
+  }
+  input {
+    display: block;
+  }
+  label[for="sub"] {
+    display: inline-block;
+  }
+  small {
+    color: red;
+    display: block;
+  }
+  button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
