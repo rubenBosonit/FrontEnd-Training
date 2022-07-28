@@ -7,7 +7,13 @@ import { switchMap } from 'rxjs';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styles: [],
+  styles: [
+    `
+      mat-form-field {
+        margin-bottom: 12px;
+      }
+    `,
+  ],
 })
 export class FormComponent implements OnInit {
   @ViewChild('myForm') myForm!: NgForm;
@@ -79,12 +85,15 @@ export class FormComponent implements OnInit {
     };
 
     if (this.editButtonVisible === true) {
-      this.tempFormsService.tableComponent.dataSource[
-        this.tempFormsService.tableComponent.userSelectedKey
-      ] = user;
-      this.tempFormsService.tableComponent.myTable.renderRows();
-      this.editButtonVisible = false;
-      this.saveButtonVisible = true;
+      user.id = this.tempFormsService.editedUserId;
+      this.tempFormsService
+        .updateUser(user)
+        .pipe(switchMap(() => this.tempFormsService.getUsers()))
+        .subscribe((users) => {
+          this.tempFormsService.tableComponent.dataSource = users;
+          this.editButtonVisible = false;
+          this.saveButtonVisible = true;
+        });
     } else {
       let length = this.tempFormsService.tableComponent.dataSource.length;
       let newId: number = 0;
@@ -99,7 +108,6 @@ export class FormComponent implements OnInit {
         .pipe(switchMap(() => this.tempFormsService.getUsers()))
         .subscribe((users) => {
           this.tempFormsService.tableComponent.dataSource = users;
-          this.tempFormsService.tableComponent.myTable.renderRows();
         });
     }
 

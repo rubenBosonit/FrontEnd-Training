@@ -65,6 +65,7 @@ export class TableComponent implements OnInit {
         this.userSelectedKey = parseInt(key);
       }
     }
+    this.tempFormsService.setEditedUserId(user.id!);
 
     this.tempFormsService.editButtonEnabled.next(true);
   }

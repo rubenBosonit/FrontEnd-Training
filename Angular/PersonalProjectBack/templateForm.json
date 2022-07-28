@@ -29,6 +29,26 @@
       "notifications": false,
       "country": "Bahamas",
       "city": "Villacarrillo"
+    },
+    {
+      "id": 6,
+      "name": "Ramona",
+      "username": "ramona23",
+      "password": "1224423gve",
+      "email": "ramona1@gmail.com",
+      "notifications": false,
+      "country": "France",
+      "city": "Paris"
+    },
+    {
+      "id": 7,
+      "name": "Alejandro",
+      "username": "alex123",
+      "password": "123456",
+      "email": "alex@gmail.com",
+      "notifications": true,
+      "country": "Afghanistan",
+      "city": "AlejandroCity"
     }
   ]
 }

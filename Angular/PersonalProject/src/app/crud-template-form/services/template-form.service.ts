@@ -16,14 +16,23 @@ export class TemplateFormService {
   public tableComponent!: TableComponent;
 
   public editButtonEnabled = new Subject<boolean>();
+  public editedUserId: number = -1;
 
   private baseUrl: string = environment.baseUrl;
   private apiURL: string = 'https://restcountries.com/v2';
 
   constructor(private http: HttpClient) {}
 
+  setEditedUserId(newId: number) {
+    this.editedUserId = newId;
+  }
+
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.baseUrl}/users`);
+  }
+
+  updateUser(user: User): Observable<User> {
+    return this.http.put<User>(`${this.baseUrl}/users/${user.id}`, user);
   }
 
   createUser(user: User): Observable<User> {
