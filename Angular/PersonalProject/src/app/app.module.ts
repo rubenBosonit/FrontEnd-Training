@@ -13,6 +13,7 @@ import { DisplayHideModule } from './display-hide/display-hide.module';
 import { ComponentCommunicationModule } from './component-communication/component-communication.module';
 import { LightSwitchModule } from './light-switch/light-switch.module';
 import { CrudReactiveFormModule } from './crud-reactive-form/crud-reactive-form.module';
+import { ExternalLibraryModule } from './external-library/external-library.module';
 
 @NgModule({
   declarations: [AppComponent, ChooseExercise, SidenavComponent],
@@ -24,8 +25,8 @@ import { CrudReactiveFormModule } from './crud-reactive-form/crud-reactive-form.
     ComponentCommunicationModule,
     CrudTemplateModule,
     CrudReactiveFormModule,
-
     DisplayHideModule,
+    ExternalLibraryModule,
     LightSwitchModule,
   ],
   providers: [],

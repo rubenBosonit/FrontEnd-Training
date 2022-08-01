@@ -1,0 +1,73 @@
+.card {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+
+  h1 {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    color: black;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+
+  p-chart {
+    width: 100%;
+    margin-bottom: 80px;
+  }
+
+  p-chart[type="radar"] {
+    width: 50%;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .card {
+    p-chart[type="radar"] {
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .card {
+    p-chart[type="radar"] {
+      width: 70%;
+    }
+  }
+}
+
+@media (max-width: 685px) {
+  .card {
+    p-chart[type="radar"] {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 610px) {
+  .card {
+    p-chart[type="radar"] {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 570px) {
+  .card {
+    p-chart[type="radar"] {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 510px) {
+  .card {
+    margin: 0;
+
+    p-chart[type="radar"] {
+      width: 100%;
+    }
+  }
+}
