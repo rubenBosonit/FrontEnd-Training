@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { switchMap, tap } from 'rxjs';
 import { Result } from '../../interfaces/films.interface';
-
 import { FilmsService } from '../../services/films.service';
 
 @Component({
-  selector: 'app-bar-chart',
-  templateUrl: './bar-chart.component.html',
-  styleUrls: ['./bar-chart.component.scss'],
+  selector: 'app-polar-area-chart',
+  templateUrl: './polar-area-chart.component.html',
+  styleUrls: ['./polar-area-chart.component.scss'],
 })
-export class BarChartComponent implements OnInit {
+export class PolarAreaChartComponent implements OnInit {
   higuerEarningMovies!: Result[];
 
   earnings: number[] = [];
   budgets: number[] = [];
   filmNames: string[] = [];
-  basicData: any;
+
+  data: any;
 
   constructor(private filmsService: FilmsService) {}
 
@@ -32,17 +31,27 @@ export class BarChartComponent implements OnInit {
     });
 
     setTimeout(() => {
-      this.basicData = {
+      this.data = {
         labels: this.filmNames,
         datasets: [
           {
             label: 'Films revenue',
-            backgroundColor: '#42A5F5',
+            backgroundColor: 'rgba(179,181,198,0.2)',
+            borderColor: 'rgba(179,181,198,1)',
+            pointBackgroundColor: 'rgba(179,181,198,1)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(179,181,198,1)',
             data: this.earnings,
           },
           {
             label: 'Films budget',
-            backgroundColor: '#FFA726',
+            backgroundColor: 'rgba(255,99,132,0.2)',
+            borderColor: 'rgba(255,99,132,1)',
+            pointBackgroundColor: 'rgba(255,99,132,1)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(255,99,132,1)',
             data: this.budgets,
           },
         ],

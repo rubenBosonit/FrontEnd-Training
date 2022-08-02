@@ -5,9 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { ExternalLibrary } from './external-library.component';
+import { PolarAreaChartComponent } from './components/polar-area-chart/polar-area-chart.component';
 
 @NgModule({
-  declarations: [BarChartComponent, ExternalLibrary],
+  declarations: [BarChartComponent, ExternalLibrary, PolarAreaChartComponent],
   imports: [CommonModule, ChartModule, HttpClientModule],
 })
 export class ExternalLibraryModule {}
