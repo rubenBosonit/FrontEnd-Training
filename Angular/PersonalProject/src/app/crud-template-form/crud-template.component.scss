@@ -1,4 +1,4 @@
-.row {
+.container-fluid {
   background-image: linear-gradient(
     180deg,
     #634835 0,
@@ -13,16 +13,4 @@
     #49001e 90%,
     #440020 100%
   );
-  width: 100%;
-  margin: 0;
-  height: auto;
-}
-
-.col-3 {
-  margin-top: 10px;
-  text-align: center;
-}
-
-.col-9 {
-  margin-top: 20px;
 }

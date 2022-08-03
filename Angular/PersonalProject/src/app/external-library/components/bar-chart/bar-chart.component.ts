@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { switchMap, tap } from 'rxjs';
+import { switchMap, tap, merge } from 'rxjs';
 import { Result } from '../../interfaces/films.interface';
 
 import { FilmsService } from '../../services/films.service';
@@ -20,16 +20,23 @@ export class BarChartComponent implements OnInit {
   constructor(private filmsService: FilmsService) {}
 
   ngOnInit(): void {
-    this.filmsService.getHiguerEarningMovies().subscribe((movies) => {
-      this.higuerEarningMovies = movies.results.slice(0, 10);
-      for (let film of this.higuerEarningMovies) {
-        this.filmsService.getMovie(film.id).subscribe((movie) => {
-          this.earnings.push(movie.revenue);
-          this.filmNames.push(movie.title);
-          this.budgets.push(movie.budget);
-        });
-      }
-    });
+    this.filmsService
+      .getHiguerEarningMovies()
+      .pipe(
+        switchMap((movies) => {
+          const moviesObservable = movies.results
+            .slice(0, 10)
+            .map((movie: any) => {
+              return this.filmsService.getMovie(movie.id);
+            });
+          return merge(...moviesObservable);
+        })
+      )
+      .subscribe((movie) => {
+        this.earnings.push(movie.revenue);
+        this.filmNames.push(movie.title);
+        this.budgets.push(movie.budget);
+      });
 
     setTimeout(() => {
       this.basicData = {
@@ -47,6 +54,6 @@ export class BarChartComponent implements OnInit {
           },
         ],
       };
-    }, 300);
+    }, 1000);
   }
 }

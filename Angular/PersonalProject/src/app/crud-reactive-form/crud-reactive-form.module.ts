@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
@@ -18,6 +19,7 @@ import { TableComponent } from './table/table.component';
   imports: [
     ButtonModule,
     CommonModule,
+    CardModule,
     CheckboxModule,
     DropdownModule,
     InputTextModule,

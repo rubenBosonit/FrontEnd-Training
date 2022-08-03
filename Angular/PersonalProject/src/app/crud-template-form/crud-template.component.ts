@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './crud-template.component.html',
   styleUrls: ['./crud-template.component.scss'],
 })
-export class CrudTemplate {}
+export class CrudTemplate {
+  showInfo: boolean = false;
+}

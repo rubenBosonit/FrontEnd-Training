@@ -24,6 +24,7 @@
       name="password1"
       minlength="6"
       required
+      type="password"
       (onchange)="invalidPassword()"
     />
     <mat-error *ngIf="invalidField('password1')"
@@ -33,7 +34,7 @@
   <br />
   <mat-form-field id="password2" appearance="fill">
     <mat-label>Confirm your password</mat-label>
-    <input matInput ngModel name="password2" required />
+    <input matInput ngModel type="password" name="password2" required />
     <mat-error *ngIf="invalidField('password2')"
       >Confirmation password required
     </mat-error>

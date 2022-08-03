@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Result } from '../../interfaces/films.interface';
+import { Result, FilmInfo } from '../../interfaces/films.interface';
 import { FilmsService } from '../../services/films.service';
+import { switchMap, map, merge } from 'rxjs';
 
 @Component({
   selector: 'app-polar-area-chart',
@@ -19,16 +20,34 @@ export class PolarAreaChartComponent implements OnInit {
   constructor(private filmsService: FilmsService) {}
 
   ngOnInit(): void {
-    this.filmsService.getHiguerEarningMovies().subscribe((movies) => {
-      this.higuerEarningMovies = movies.results.slice(0, 10);
-      for (let film of this.higuerEarningMovies) {
-        this.filmsService.getMovie(film.id).subscribe((movie) => {
-          this.earnings.push(movie.revenue);
-          this.filmNames.push(movie.title);
-          this.budgets.push(movie.budget);
-        });
-      }
-    });
+    // this.filmsService.getHiguerEarningMovies().subscribe((movies) => {
+    //   this.higuerEarningMovies = movies.results.slice(0, 10);
+    //   for (let film of this.higuerEarningMovies) {
+    //     this.filmsService.getMovie(film.id).subscribe((movie) => {
+    //       this.earnings.push(movie.revenue);
+    //       this.filmNames.push(movie.title);
+    //       this.budgets.push(movie.budget);
+    //     });
+    //   }
+    // });
+
+    this.filmsService
+      .getHiguerEarningMovies()
+      .pipe(
+        switchMap((movies) => {
+          const moviesObservable = movies.results
+            .slice(0, 10)
+            .map((movie: any) => {
+              return this.filmsService.getMovie(movie.id);
+            });
+          return merge(...moviesObservable);
+        })
+      )
+      .subscribe((movie) => {
+        this.earnings.push(movie.revenue);
+        this.filmNames.push(movie.title);
+        this.budgets.push(movie.budget);
+      });
 
     setTimeout(() => {
       this.data = {
@@ -56,6 +75,6 @@ export class PolarAreaChartComponent implements OnInit {
           },
         ],
       };
-    }, 300);
+    }, 1000);
   }
 }

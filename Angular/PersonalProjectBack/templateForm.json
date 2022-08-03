@@ -49,6 +49,16 @@
       "notifications": true,
       "country": "Afghanistan",
       "city": "AlejandroCity"
+    },
+    {
+      "id": 8,
+      "name": "Lucía",
+      "username": "luci23",
+      "password": "1234567",
+      "email": "ruplasan@gmail.com",
+      "notifications": true,
+      "country": "Algeria",
+      "city": "Algis"
     }
   ]
 }

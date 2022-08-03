@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './crud-reactive.component.html',
   styleUrls: [`./crud-reactive.component.scss`],
 })
-export class CrudReactive {}
+export class CrudReactive {
+  showInfo: boolean = false;
+}

@@ -1,9 +1,25 @@
-<div class="row">
-  <div class="col-3">
+<div
+  class="container-fluid"
+  fxLayout="row"
+  fxLayout.sm="column"
+  fxLayout.xs="column"
+>
+  <div fxFlex="15">
+    <button mat-icon-button (click)="showInfo = !showInfo">
+      <mat-icon>help</mat-icon>
+    </button>
+    <mat-card *ngIf="showInfo"
+      >To see full functionality of this exercise it is needed to start
+      json-server backend running the command "json-server - -watch
+      ./templateForm.json" inside PersonalProjectBack directory</mat-card
+    >
+  </div>
+  <div fxFlex="1"></div>
+  <div fxFlex="15">
     <app-form></app-form>
   </div>
-
-  <div class="col-9">
+  <div fxFlex="10"></div>
+  <div fxFlex="59">
     <app-table></app-table>
   </div>
 </div>

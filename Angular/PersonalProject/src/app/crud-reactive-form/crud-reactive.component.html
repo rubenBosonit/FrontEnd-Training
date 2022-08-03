@@ -1,4 +1,21 @@
 <div class="container">
+  <div class="col">
+    <button
+      pButton
+      pRipple
+      type="button"
+      icon="pi pi-info"
+      class="p-button-rounded"
+      (click)="showInfo = !showInfo"
+    ></button>
+    <p-card *ngIf="showInfo">
+      To see full functionality of this exercise it is needed to start
+      json-server backend running the command "json-server --watch
+      ./reactiveForm.json" inside PersonalProjectBack directory
+    </p-card>
+  </div>
+
+  <div class="separator"></div>
   <div>
     <app-form></app-form>
   </div>
